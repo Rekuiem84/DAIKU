@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="cont">
+    <img src="tile-1.svg" alt="">
+    <img src="tile-3.svg" alt="">
+    <img src="tile-4.svg" alt="">
+    <img src="tile-10.svg" alt="">
+    <img src="tile-2.svg" alt="">
+    <img src="tile-6.svg" alt="">
+    <img src="tile-7.svg" alt="">
+    <img src="tile-8.svg" alt="">
+    <img src="tile-9.svg" alt="">
+  </div>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+    }
+
+    .cont {
+      width: 600px;
+      aspect-ratio: 1;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    img {
+      width: 100%;
+      aspect-ratio: 1;
+    }
+  </style>
+</body>
+
+</html>

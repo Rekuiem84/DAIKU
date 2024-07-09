@@ -1,0 +1,200 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	position: relative;
+	min-height: 320vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-family: sans-serif;
+}
+:root {
+	--color: #2a1300;
+	--color-1: #4a2100;
+	--color-2: #662d00;
+	--color-light: #987654;
+	--color-lighter: #e0c6ac;
+	--color-orange: #ff5d54;
+	--color-dblue: #00426b;
+	--color-lblue: #64bcfe;
+	--color-violet: #603ec5;
+	--color-white: #ffffff;
+}
+.showcase {
+	overflow-x: hidden;
+	position: relative;
+}
+.tile-row-wrapper {
+	--v-gap: 1rem;
+	--h-gap: var(--v-gap);
+	display: flex;
+	flex-direction: column;
+	gap: var(--h-gap);
+}
+
+.tile-row-wrapper:nth-of-type(1) {
+	mask-image: linear-gradient(to bottom, black, rgba(0 0 0 / 0.15));
+
+	& .tile-row:nth-child(even) {
+		flex-direction: row-reverse;
+	}
+}
+.tile-row-wrapper:nth-of-type(2) {
+	mask-image: linear-gradient(to top, black, rgba(0 0 0 / 0.15));
+
+	& .tile-row:nth-child(odd) {
+		flex-direction: row-reverse;
+	}
+}
+.tile-row {
+	--gap: 1rem;
+	display: flex;
+	justify-content: space-between;
+	gap: var(--v-gap);
+
+	img {
+		display: block;
+		border: 3px solid var(--color);
+		border-radius: 0.5rem;
+		padding: 0.5rem;
+		width: 120px;
+		aspect-ratio: 1;
+	}
+}
+.showcase article {
+	z-index: 3;
+	position: relative;
+	display: grid;
+	place-items: center;
+	height: 280px;
+	margin-inline: auto;
+}
+.cont {
+	padding: 1rem;
+	position: absolute;
+	background: white;
+	border: 3px solid black;
+	border-radius: 1.5rem;
+	margin-inline: auto;
+	width: min(550px, 90%);
+	aspect-ratio: 3/2;
+	text-align: center;
+
+	& p {
+		margin-block: 0.5em;
+		font-size: 2rem;
+		text-wrap: balance;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+}
+.showcase svg {
+	max-width: 300px;
+
+	path {
+		animation: 6s steps(1) infinite;
+	}
+
+	.color--orange {
+		fill: var(--color-orange);
+		animation-name: color-rotation-orange;
+	}
+
+	.color--dblue {
+		fill: var(--color-dblue);
+		animation-name: color-rotation-dblue;
+	}
+
+	.color--lblue {
+		fill: var(--color-lblue);
+		animation-name: color-rotation-lblue;
+	}
+
+	.color--violet {
+		fill: var(--color-violet);
+		animation-name: color-rotation-violet;
+	}
+
+	.color--white {
+		fill: var(--color-white);
+	}
+}
+@keyframes color-rotation-orange {
+	from,
+	to {
+		fill: var(--color-orange);
+	}
+	25% {
+		fill: var(--color-dblue);
+	}
+	50% {
+		fill: var(--color-lblue);
+	}
+	75% {
+		fill: var(--color-violet);
+	}
+}
+@keyframes color-rotation-dblue {
+	from,
+	to {
+		fill: var(--color-dblue);
+	}
+	25% {
+		fill: var(--color-lblue);
+	}
+	50% {
+		fill: var(--color-violet);
+	}
+	75% {
+		fill: var(--color-orange);
+	}
+}
+@keyframes color-rotation-lblue {
+	from,
+	to {
+		fill: var(--color-lblue);
+	}
+	25% {
+		fill: var(--color-violet);
+	}
+	50% {
+		fill: var(--color-orange);
+	}
+	75% {
+		fill: var(--color-dblue);
+	}
+}
+@keyframes color-rotation-violet {
+	from,
+	to {
+		fill: var(--color-violet);
+	}
+	25% {
+		fill: var(--color-orange);
+	}
+	50% {
+		fill: var(--color-dblue);
+	}
+	75% {
+		fill: var(--color-lblue);
+	}
+}
+h2 {
+	position: absolute;
+	left: 50%;
+	translate: -50% 0;
+	font-size: 4rem;
+	text-transform: uppercase;
+}
+h2:first-of-type {
+	top: 10rem;
+}
+h2:last-of-type {
+	bottom: 10rem;
+}
